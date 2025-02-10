@@ -1,0 +1,16 @@
+{
+  "selenium": {
+    "browser": "chrome",
+    "baseUrl": "https://www.example.com",
+    "implicitWait": 10,
+    "pageLoad": 60,
+    "explicitWait": 1,
+    "chromeOptions": {
+      "args": [
+        "--headless=new",
+        "--disable-gpu",
+        "--window-size=1920,1080"
+      ]
+    }
+  }
+}

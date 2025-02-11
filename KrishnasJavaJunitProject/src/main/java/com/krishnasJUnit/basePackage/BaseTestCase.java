@@ -3,6 +3,7 @@ package com.krishnasJUnit.basePackage;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.krishnasJUnit.ConfigDAO.EnvironmentMapping;
+import com.krishnasJUnit.ConfigHelper.ConfigurationHelper;
 import com.krishnasJUnit.LoggerHelper.LoggerClass;
 import com.krishnasJUnit.VariableHelper.ConfigurationEnv;
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -12,11 +13,10 @@ import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import java.io.File;
 import java.time.Duration;
 
-public class BaseTestClass {
+public class BaseTestCase {
     public WebDriver webDriver;
     public WebDriverWait webDriverWait;
 
@@ -25,19 +25,9 @@ public class BaseTestClass {
         System.out.print("Pre-Test Case Starting Method");
     }
 
-    public BaseTestClass() {
+    public BaseTestCase() {
         try {
-            //loggingClass = new LoggingClass();
-            ObjectMapper objectMapper = new ObjectMapper();
-            LoggerClass.logger.info("PRE STEP --> Starting to Load Environment Config File");
-            JsonNode rootNode = objectMapper.readTree(new File(System.getProperty("user.dir") + "/TestSettings.json"));
-            LoggerClass.logger.info("PRE STEP --> Starting to Load Environment Config File --> PASS");
-
-            LoggerClass.logger.info(LoggerClass.IMPMarker, "Loading Configuration Environment");
-            ConfigurationEnv.environmentMapping = objectMapper.readValue(rootNode.path("selenium").toPrettyString(), EnvironmentMapping.class);
-            //System.out.print("Settings Json File --> " + ConfigurationEnv.environmentMapping.toString());
-            LoggerClass.logger.info(LoggerClass.IMPMarker, "Loading Configuration Environment --> PASS");
-
+            ConfigurationEnv.environmentMapping = ConfigurationHelper.getConfiguration();
             LoggerClass.logger.warn("Need to Check here Browser Type Please make sure Set correctly");
             if (ConfigurationEnv.environmentMapping.getBrowser().equalsIgnoreCase("chrome")) {
                 WebDriverManager.chromedriver().setup();

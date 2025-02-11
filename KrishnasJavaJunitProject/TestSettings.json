@@ -11,6 +11,11 @@
         "--disable-gpu",
         "--window-size=1920,1080"
       ]
+    },
+    "APIServerUrl": "https://jsonplaceholder.typicode.com",
+    "RequestPath": {
+      "APIGetURLCase1": "/posts/1",
+      "APIGetURLCase2": "/posts"
     }
   }
 }

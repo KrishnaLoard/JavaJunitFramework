@@ -10,6 +10,17 @@ public class RequestPathClass {
     @JsonProperty("APIGetURLCase2")
     private String APIGetURLCase2;
 
+    @JsonProperty("APIGetURLCase3")
+    private String APIGetURLCase3;
+
+    public String getAPIGetURLCase3() {
+        return APIGetURLCase3;
+    }
+
+    public void setAPIGetURLCase3(String APIGetURLCase3) {
+        this.APIGetURLCase3 = APIGetURLCase3;
+    }
+
     public String getAPIGetURLCase1() {
         return APIGetURLCase1;
     }

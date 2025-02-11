@@ -16,14 +16,12 @@ public class RestAPIClient {
     }
 
     public static HttpRequest getHTTPPOSTRequest(String baseURL, String jsonBody) {
-        HttpRequest httpPOSTRequest = HttpRequest.newBuilder().uri(URI.create(baseURL)).
+        return HttpRequest.newBuilder().uri(URI.create(baseURL)).
                 header("Content-Type", "application/json").POST(HttpRequest.BodyPublishers.ofString(jsonBody)).build();
-        return httpPOSTRequest;
     }
 
     public static HttpRequest getHTTPGETRequest(String baseURL) {
-        HttpRequest httpGETRequest = HttpRequest.newBuilder().uri(URI.create(baseURL)).
+        return HttpRequest.newBuilder().uri(URI.create(baseURL)).
                 header("Content-Type", "application/json").GET().build();
-        return httpGETRequest;
     }
 }

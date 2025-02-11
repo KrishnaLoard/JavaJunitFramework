@@ -1,4 +1,4 @@
-package com.krishnas.MainTestCaseControllers.APITests;
+package com.Krishnas.MainTestCaseControllers;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.krishnasJUnit.LoggerHelper.LoggerClass;
@@ -7,6 +7,7 @@ import com.krishnasJUnit.VariableHelper.ConfigurationEnv;
 import com.krishnasJUnit.basePackage.RestAPIClient;
 import junit.framework.Assert;
 import org.junit.jupiter.api.Test;
+
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 

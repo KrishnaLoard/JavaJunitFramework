@@ -13,11 +13,25 @@ public class EnvironmentMapping {
     private int explicitWait;
     private ChromeOptions chromeOptions;
 
+    @JsonProperty("APIServerUrl2")
+    private String APIServerUrl2;
+
     @JsonProperty("APIServerUrl")
     private String APIServerUrl;
 
+    @JsonProperty("AccessKeys")
+    private String accessKeys;
+
     @JsonProperty("RequestPath")
     private RequestPathClass requestPathClass;
+
+    public String getAccessKeys() {
+        return accessKeys;
+    }
+
+    public void setAccessKeys(String accessKeys) {
+        this.accessKeys = accessKeys;
+    }
 
     public RequestPathClass getRequestPathClass() {
         return requestPathClass;
@@ -81,5 +95,13 @@ public class EnvironmentMapping {
 
     public void setAPIServerUrl(String APIServerUrl) {
         this.APIServerUrl = APIServerUrl;
+    }
+
+    public String getAPIServerUrl2() {
+        return APIServerUrl2;
+    }
+
+    public void setAPIServerUrl2(String APIServerUrl2) {
+        this.APIServerUrl2 = APIServerUrl2;
     }
 }

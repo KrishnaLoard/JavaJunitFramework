@@ -13,9 +13,12 @@
       ]
     },
     "APIServerUrl": "https://jsonplaceholder.typicode.com",
+    "APIServerUrl2": "https://api.marketstack.com",
     "RequestPath": {
       "APIGetURLCase1": "/posts/1",
-      "APIGetURLCase2": "/posts"
-    }
+      "APIGetURLCase2": "/posts",
+      "APIGetURLCase3": "/v1/tickers"
+    },
+    "AccessKeys": "4350ad78bd1b13bdf00a53ea93834316"
   }
 }

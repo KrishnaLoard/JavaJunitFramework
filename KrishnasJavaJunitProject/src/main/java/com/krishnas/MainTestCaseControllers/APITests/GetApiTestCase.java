@@ -10,8 +10,8 @@ import org.junit.jupiter.api.Test;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
-public class GetApiTest1 extends RestAPIClient {
-    public GetApiTest1() {
+public class GetApiTestCase extends RestAPIClient {
+    public GetApiTestCase() {
         super();
     }
 
@@ -20,7 +20,6 @@ public class GetApiTest1 extends RestAPIClient {
         try {
             LoggerClass.logger.info("STEP: 1 --> Getting the Server EndPoint --> {}", ConfigurationEnv.environmentMapping.getAPIServerUrl());
             LoggerClass.logger.info("STEP: 2 --> Getting the Server EndPoint --> {}", ConfigurationEnv.environmentMapping.getRequestPathClass().getAPIGetURLCase1());
-
             LoggerClass.logger.info("STEP: 3 --> Preparing Client for Rest Test --> {}", ConfigurationEnv.environmentMapping.getAPIServerUrl());
             HttpRequest getRequest = getHTTPGETRequest(ConfigurationEnv.environmentMapping.getAPIServerUrl() + ConfigurationEnv.environmentMapping.getRequestPathClass().getAPIGetURLCase1());
             HttpResponse<String> responseString = httpClient.send(getRequest, HttpResponse.BodyHandlers.ofString());

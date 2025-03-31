@@ -1,8 +1,5 @@
 package com.krishnasJUnit.basePackage;
 
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.krishnasJUnit.ConfigDAO.EnvironmentMapping;
 import com.krishnasJUnit.ConfigHelper.ConfigurationHelper;
 import com.krishnasJUnit.LoggerHelper.LoggerClass;
 import com.krishnasJUnit.VariableHelper.ConfigurationEnv;
@@ -13,17 +10,12 @@ import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import java.io.File;
+
 import java.time.Duration;
 
 public class BaseTestCase {
     public WebDriver webDriver;
     public WebDriverWait webDriverWait;
-
-    @BeforeEach
-    public void PreRunMethod() {
-        System.out.print("Pre-Test Case Starting Method");
-    }
 
     public BaseTestCase() {
         try {
@@ -43,6 +35,11 @@ public class BaseTestCase {
             throw new RuntimeException(e);
             //e.printStackTrace();
         }
+    }
+
+    @BeforeEach
+    public void PreRunMethod() {
+        System.out.print("Pre-Test Case Starting Method");
     }
 
     @Test
